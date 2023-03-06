@@ -1,7 +1,7 @@
 import { atom } from "jotai";
-import { atomFamily } from "jotai/utils";
+import { atomFamily, atomWithStorage } from "jotai/utils";
 
-export const todosAtom = atom([]); // full of ids
+export const todosAtom = atomWithStorage('todos', []); // full of ids
 
 export const todoAtomFamily = atomFamily(
   // Full of the actual todos
@@ -20,7 +20,7 @@ export const filterMap = Object.freeze({
   done: "done",
 });
 
-export const filterAtom = atom(filterMap.all); // The filter term
+export const filterAtom = atomWithStorage('filter', filterMap.all); // The filter term
 
 export const filteredAtom = atom((get) => {
   // derived state that
