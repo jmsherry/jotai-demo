@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 const TodoItem = ({
   id,
   remove = () => console.error(`No remove function provided to TodoItem`),
-  update = () => console.error(`No remove function provided to TodoItem`),
+  update = () => console.error(`No update function provided to TodoItem`),
   even
 }) => {
   const [item, setItem] = useAtom(todoAtomFamily({ id }));
