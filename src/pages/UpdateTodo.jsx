@@ -9,23 +9,19 @@ import TodoForm from "../components/forms/TodoForm";
 
 function UpdateTodo() {
   const { id } = useParams();
-  console.log(id);
 
   const navigate = useNavigate();
 
   const [item, setItem] = useAtom(todoAtomFamily({ id }));
-console.log('todo', item);
   const handler = useCallback(
     async (data) => {
       await updateTodo(id, data);
-      console.log('DD todo', item);
-      console.log('DD data', data);
       setItem({ ...item, ...data });
       navigate('/');
     },
     [updateTodo, setItem]
   );
-  // return <p>update</p>;
+
   return (
     <>
       <Typography

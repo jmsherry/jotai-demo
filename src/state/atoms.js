@@ -1,16 +1,15 @@
 import { atom } from "jotai";
 import { atomFamily, atomWithStorage } from "jotai/utils";
 
-export const todosAtom = atomWithStorage('todos', []); // full of ids
+// full of ids
+export const todosAtom = atomWithStorage('todos', []); 
 
+// Full of the actual todos
 export const todoAtomFamily = atomFamily(
-  // Full of the actual todos
   ({ title = "", duration = "", done = false }) => {
-    console.log("creating", { title, duration, done });
     return atom({ title, duration, done });
   },
   (a, b) => {
-    console.log("comparing", a, b);
     return a.id === b.id;
   }
 );

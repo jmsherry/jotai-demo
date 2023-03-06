@@ -46,9 +46,7 @@ const TodoForm = ({ todo, handler } = {}) => {
   });
 
   useEffect(() => {
-    console.log("t", todo);
     if (todo) {
-      console.log("populating", todo);
       reset(todo); // populate
     }
   }, []);

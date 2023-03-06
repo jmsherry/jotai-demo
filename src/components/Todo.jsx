@@ -11,9 +11,7 @@ const TodoItem = ({
   update = () => console.error(`No remove function provided to TodoItem`),
   even
 }) => {
-  console.log("id", id);
   const [item, setItem] = useAtom(todoAtomFamily({ id }));
-  console.log("🚀 ~ file: Todo.jsx:15 ~ item:", item);
 
   const toggleDone = () => setItem({ ...item, done: !item.done });
 

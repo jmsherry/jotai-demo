@@ -38,7 +38,7 @@ function ListTodos() {
 
   useEffect(() => {
     (async () => {
-      console.log("initial load function called", todos);
+      // console.log("initial load function called", todos);
       const remoteTodos = await getTodos();
       for (const item of remoteTodos) {
         addTodoToJotai(item, setTodos)
